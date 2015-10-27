@@ -30,6 +30,9 @@ RUN cp -R /tmp/icingaweb2/icingaweb2-master/modules/monitoring /etc/icingaweb2/m
 RUN cp -R  /tmp/icingaweb2/icingaweb2-master/modules/doc /etc/icingaweb2/modules/
 RUN rm -rf /tmp/icingaweb2.zip /tmp/icingaweb2
 
+# Fix for ping issue under jessie
+RUN chmod u+s /bin/ping
+
 EXPOSE 80 443 5665
 
 VOLUME  ["/etc/icinga2", "/etc/icinga-web", "/etc/icingaweb2", "/var/lib/mysql", "/var/lib/icinga2", "/etc/ssmtp"]
