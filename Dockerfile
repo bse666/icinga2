@@ -31,7 +31,7 @@ RUN cp -R  /tmp/icingaweb2/icingaweb2-master/modules/doc /etc/icingaweb2/modules
 RUN rm -rf /tmp/icingaweb2.zip /tmp/icingaweb2
 
 # Fix for ping issue under jessie
-RUN chmod u+s /bin/ping
+RUN chmod u+s /bin/ping /bin/ping6
 
 EXPOSE 80 443 5665
 
